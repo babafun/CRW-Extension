@@ -1,6 +1,7 @@
 import React from "react";
 
 import {
+  closeButtonHoverHandlers,
   POPUP_CSS,
   POPUP_LAYOUT,
   ghostButtonHoverHandlers,
@@ -119,24 +120,29 @@ export const MatchPopupHeader = (props: MatchPopupHeaderProps) => {
             <button
               type="button"
               onClick={onClose}
-              {...ghostButtonHoverHandlers}
+              {...closeButtonHoverHandlers}
               aria-label="Close"
               title="Close"
               style={{
                 ...headerIconButtonStyle,
               }}
             >
-              <img
-                src={closeIconUrl}
-                alt=""
-                aria-hidden="true"
+              <span
                 style={{
                   width: "18px",
                   height: "18px",
                   display: "block",
-                  filter: "brightness(0) saturate(100%) invert(100%)",
-                  opacity: 0.82,
+                  backgroundColor: "#FFFFFF",
+                  WebkitMaskImage: `url(${closeIconUrl})`,
+                  maskImage: `url(${closeIconUrl})`,
+                  WebkitMaskSize: "contain",
+                  maskSize: "contain",
+                  WebkitMaskRepeat: "no-repeat",
+                  maskRepeat: "no-repeat",
+                  WebkitMaskPosition: "center",
+                  maskPosition: "center",
                 }}
+                aria-hidden="true"
               />
             </button>
           )}

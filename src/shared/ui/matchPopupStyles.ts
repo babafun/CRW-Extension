@@ -73,3 +73,18 @@ export const ghostButtonHoverHandlers = {
     event.currentTarget.style.background = "transparent";
   },
 };
+
+export const closeButtonHoverHandlers = {
+  onMouseEnter: (event: React.MouseEvent<HTMLButtonElement>) => {
+    if (event.currentTarget.disabled) return;
+    event.currentTarget.style.background = "#d47368";
+    const icon = event.currentTarget.firstElementChild as HTMLElement | null;
+    if (icon) icon.style.backgroundColor = "#f05241";
+  },
+  onMouseLeave: (event: React.MouseEvent<HTMLButtonElement>) => {
+    if (event.currentTarget.disabled) return;
+    event.currentTarget.style.background = "transparent";
+    const icon = event.currentTarget.firstElementChild as HTMLElement | null;
+    if (icon) icon.style.backgroundColor = "#FFFFFF";
+  },
+};
